@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://tsfx8034reu2"]
+
+[ext_resource type="Texture2D" uid="uid://cge0fx6r7om7y" path="res://Assets/Sprites/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_elqyf"]
+[ext_resource type="Script" path="res://Assets/Scripts/energy_cell.gd" id="1_uyu7p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5b6w"]
+
+[node name="EnergyCell" type="Area2D"]
+script = ExtResource("1_uyu7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_elqyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.685785, 0.685785)
+shape = SubResource("CircleShape2D_w5b6w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
